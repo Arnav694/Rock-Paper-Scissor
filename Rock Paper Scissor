@@ -1,0 +1,53 @@
+
+#Import random module
+import random 
+
+#Create a game function with the game's actual code
+def game():
+    randno=random.randint(1,3) #Chooses random number between 1 and 3
+    if randno==1:
+        comp='r'
+    elif randno==2:
+        comp='p'
+    elif randno==3:
+        comp='s'
+
+    a=input("Rock(r) Paper(p) Scissor(s)? ")
+    if a==comp:
+        print("It's a tie!")
+    elif a=='r':
+        if comp=='p':
+            print("Computer wins!")
+        elif comp=='s':
+            print("You win!")
+    
+    elif a=='p':
+        if comp=='r':
+            print("You win!")
+        elif comp=='s':
+            print("Computer wins!")
+
+
+    elif a=='s':
+        if comp=='r':
+            print("Computer wins!")
+        elif comp=='p':
+            print("You win!")
+
+
+game()
+
+# Assigning a true value for using it for while loop
+val=True
+ 
+ #Loop is initiated so the player can play as much he wants
+while(val): 
+    b=input("Do you want to continue? 'y' for yes and 'n' for no.")
+
+    if b=='y':
+     game()
+     val=True
+    elif b=='n':
+      print("Thank you! It was fun playing with you!")
+      exit()
+      val=False
